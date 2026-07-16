@@ -49,9 +49,3 @@ rustgrep_std/
 --count
 --recursive
 
-\Users\AMD\dev\rustgrep_std> rustgrep_std
-
-PS C:\Users\AMD\dev\rustgrep_std> git rm --cached src/main.exe src/main.pdb
-rm 'src/main.exe'
-rm 'src/main.pdb'
-PS C:\Users\AMD\dev\rustgrep_std> 
