@@ -49,3 +49,29 @@ rustgrep_std/
 --count
 --recursive
 
+cargo run -- -n "pub" src/core/args.rs
+
+cargo run -- -i "ARGUMENTOS" src/core/args.rs
+
+cargo run -- -c "let" src/core/args.rs
+
+cargo run -- -i -n "struct" src/core/args.rs
+
+cargo run -- -c -i "fn" src/core/args.rs
+
+cargo run -- -n "pub" src/core/args.rs src/main.rs
+
+cargo run -- -c "impl" src/core/args.rs src/core/buscador.rs
+
+
+cargo run -- "pub" src
+
+cargo run -- -r -c -i "struct" src
+
+
+cargo run -- -r -n -i "Argumentos" src
+
+
+cargo run -- "teste" pasta_que_nao_existe
+
+cargo run -- -n "pub" arquivo_fantasma.txt src/main.rs
