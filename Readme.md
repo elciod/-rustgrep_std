@@ -127,3 +127,40 @@ cargo run -- "teste" pasta_que_nao_existe
 # Misturar arquivo inexistente com um existente (Continuidade de fluxo)
 cargo run -- -n "pub" arquivo_fantasma.txt src/main.rs
 ```
+
+---------------------------------------------------------------------------
+
+# rustgrep_std 🚧
+
+Este projeto está atualmente em **desenvolvimento ativo**.
+
+O objetivo é o desenvolvimento de uma ferramenta de busca textual parecida com o comando `grep` do Linux, construída inteiramente em **Rust** e com o grande diferencial de utilizar apenas a **biblioteca padrão (std)**, sem o uso de bibliotecas (crates) externas como `clap`, `regex` ou `walkdir`.
+
+---
+
+## 🚀 Novidades da Versão (v1.1.0)
+Nesta última atualização, o projeto subiu de nível em engenharia de software:
+- **Arquitetura Híbrida (Binário + Lib):** O projeto foi transformado em biblioteca (`lib.rs`) e executável (`main.rs`) para permitir integrações seguras.
+- **Módulos Dedicados:** Distribuição de responsabilidades com os novos arquivos `src/io/arquivos.rs` e `src/utils/formatador.rs`.
+- **Suíte de Testes Nativos:** Implementação de testes integrados executados direto em memória através do comando `cargo test` (sem conflitos de terminal).
+- **Compilação de Alta Performance:** Pronto para geração de executáveis otimizados em modo de produção via `cargo build --release`.
+
+---
+---
+
+## 📦 Compilação e Execução em Produção
+
+Para gerar e testar o executável definitivo de alta performance (sem travas de depuração), utilize o comando de otimização máxima do Rust:
+
+```powershell
+# Gerar o executável autônomo otimizado (.exe)
+cargo build --release
+```
+
+O binário final será gerado de forma leve e independente dentro da pasta `target/release/`. Para rodar e testar o executável diretamente, utilize a sintaxe abaixo:
+
+```powershell
+# Exemplo de execução direta do binário otimizado
+.\target\release\rustgrep_std.exe -r -n -i "Argumentos" src
+```
+---
